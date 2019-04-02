@@ -206,9 +206,9 @@ class LstmRNN(object):
                 i for i, sym_label in enumerate(merged_test_labels)
                 if sym_label[0] == l])
             sample_indices[sym] = target_indices
-        print sample_indices
+        print (sample_indices)
 
-        print "Start training for stocks:", [d.stock_sym for d in dataset_list]
+        print ("Start training for stocks:"+[d.stock_sym for d in dataset_list])
         for epoch in xrange(config.max_epoch):
             epoch_step = 0
             learning_rate = config.init_learning_rate * (
