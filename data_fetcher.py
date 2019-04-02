@@ -71,11 +71,11 @@ def fetch_prices(symbol, out_name):
 
     data = pd.read_csv(out_name)
     if data.empty:
-        print "Remove {} because the data set is empty.".format(out_name)
+        print ("Remove {} because the data set is empty.".format(out_name))
         os.remove(out_name)
     else:
         dates = data.iloc[:,0].tolist()
-        print "# Fetched rows: %d [%s to %s]" % (data.shape[0], dates[-1], dates[0])
+        print ("# Fetched rows: %d [%s to %s]" % (data.shape[0], dates[-1], dates[0]))
 
     # Take a rest
     sleep_time = random.randint(*RANDOM_SLEEP_TIMES)
