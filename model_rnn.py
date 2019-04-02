@@ -180,9 +180,9 @@ class LstmRNN(object):
         merged_test_y = np.array(merged_test_y)
         merged_test_labels = np.array(merged_test_labels)
 
-        print "len(merged_test_X) =", len(merged_test_X)
-        print "len(merged_test_y) =", len(merged_test_y)
-        print "len(merged_test_labels) =", len(merged_test_labels)
+        print ("len(merged_test_X) ="+ len(merged_test_X))
+        print ("len(merged_test_y) ="+ len(merged_test_y))
+        print ("len(merged_test_labels) ="+ len(merged_test_labels))
 
         test_data_feed = {
             self.learning_rate: 0.0,
