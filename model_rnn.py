@@ -234,8 +234,7 @@ class LstmRNN(object):
                     if np.mod(global_step, len(dataset_list) * 200 / config.input_size) == 1:
                         test_loss, test_pred = self.sess.run([self.loss_test, self.pred], test_data_feed)
 
-                        print "Step:%d [Epoch:%d] [Learning rate: %.6f] train_loss:%.6f test_loss:%.6f" % (
-                            global_step, epoch, learning_rate, train_loss, test_loss)
+                        ##print( "Step::+%d [Epoch:%d] [Learning rate: %.6f] train_loss:%.6f test_loss:%.6f") % (global_step, epoch, learning_rate, train_loss, test_loss)
 
                         # Plot samples
                         for sample_sym, indices in sample_indices.iteritems():
