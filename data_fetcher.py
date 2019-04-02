@@ -26,9 +26,9 @@ def _download_sp500_list():
         return
 
     f = urllib2.urlopen(SP500_LIST_URL)
-    print "Downloading ...", SP500_LIST_URL
+    print ("Downloading ..."+ SP500_LIST_URL)
     with open(SP500_LIST_PATH, 'w') as fin:
-        print >> fin, f.read()
+        print (fin, f.read())
     return
 
 
@@ -37,7 +37,7 @@ def _load_symbols():
     df_sp500 = pd.read_csv(SP500_LIST_PATH)
     df_sp500.sort('Market Cap', ascending=False, inplace=True)
     stock_symbols = df_sp500['Symbol'].unique().tolist()
-    print "Loaded %d stock symbols" % len(stock_symbols)
+    print ("Loaded %d stock symbols" % len(stock_symbols))
     return stock_symbols
 
 
@@ -58,15 +58,15 @@ def fetch_prices(symbol, out_name):
         urllib2.quote(symbol),
         urllib2.quote(now_datetime, '+')
     )
-    print "Fetching {} ...".format(symbol)
-    print symbol_url
+    print ("Fetching {} ...".format(symbol))
+    print (symbol_url)
 
     try:
         f = urllib2.urlopen(symbol_url)
         with open(out_name, 'w') as fin:
             print >> fin, f.read()
     except urllib2.HTTPError:
-        print "Failed when fetching {}".format(symbol)
+        print ("Failed when fetching {}".format(symbol))
         return False
 
     data = pd.read_csv(out_name)
