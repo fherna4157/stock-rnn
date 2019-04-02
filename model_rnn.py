@@ -100,8 +100,8 @@ class LstmRNN(object):
             self.inputs_with_embed = tf.identity(self.inputs)
             self.embed_matrix_summ = None
 
-        print "inputs.shape:", self.inputs.shape
-        print "inputs_with_embed.shape:", self.inputs_with_embed.shape
+        print ("inputs.shape:"+ self.inputs.shape)
+        print ("inputs_with_embed.shape:"+ self.inputs_with_embed.shape)
 
         # Run dynamic RNN
         val, state_ = tf.nn.dynamic_rnn(cell, self.inputs_with_embed, dtype=tf.float32, scope="dynamic_rnn")
