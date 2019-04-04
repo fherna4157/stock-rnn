@@ -7,10 +7,10 @@ import os
 import pandas as pd
 import random
 import time
+import pip
 
-
-
-import urllib as urllib2
+install("urllib2")
+import urllib2
 
 from BeautifulSoup import BeautifulSoup
 from datetime import datetime
@@ -23,6 +23,12 @@ RANDOM_SLEEP_TIMES = (1, 5)
 SP500_LIST_URL = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents-financials.csv"
 SP500_LIST_PATH = os.path.join(DATA_DIR, "constituents-financials.csv")
 
+
+def install(package):
+    if hasattr(pip, 'main'):
+        pip.main(['install', package])
+    else:
+        pip._internal.main(['install', package])
 
 def _download_sp500_list():
     if os.path.exists(SP500_LIST_PATH):
