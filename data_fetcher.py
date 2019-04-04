@@ -12,7 +12,7 @@ import pip
 import sys
 import subprocess
 
-subprocess.call([sys.executable, "-m", "pip", "install", "urllib2"])
+subprocess.call([sys.executable, "-m", "pip3", "install", "urllib2"])
 
 
 
