@@ -9,10 +9,8 @@ import random
 import time
 import pip
 
-if hasattr(pip, 'main'):
-    pip.main(['install', urllib2])
-else:
-    pip._internal.main(['install', urllib2])
+pip.main(['install', urllib2])
+
 
 install("urllib2")
 import urllib2
