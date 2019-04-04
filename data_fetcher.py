@@ -10,7 +10,7 @@ import time
 import pip
 
 import sys
-!{sys.executable} -m  pip install urllib2
+sys.executable -m  pip install urllib2
 
 
 
