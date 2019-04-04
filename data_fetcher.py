@@ -10,7 +10,9 @@ import time
 import pip
 
 import sys
-sys.executable -m  pip install urllib2
+import subprocess
+
+install(urllib2)
 
 
 
@@ -29,10 +31,7 @@ SP500_LIST_PATH = os.path.join(DATA_DIR, "constituents-financials.csv")
 
 
 def install(package):
-    if hasattr(pip, 'main'):
-        pip.main(['install', package])
-    else:
-        pip._internal.main(['install', package])
+    subprocess.call([sys.executable, "-m", "pip", "install", package])
 
 def _download_sp500_list():
     if os.path.exists(SP500_LIST_PATH):
