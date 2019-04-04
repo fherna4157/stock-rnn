@@ -79,7 +79,7 @@ def fetch_prices(symbol, out_name):
 
     # Take a rest
     sleep_time = random.randint(*RANDOM_SLEEP_TIMES)
-    print "Sleeping ... %ds" % sleep_time
+    print ("Sleeping ... %ds" + sleep_time)
     time.sleep(sleep_time)
     return True
 
@@ -97,14 +97,14 @@ def main(continued):
     for idx, sym in enumerate(symbols):
         out_name = os.path.join(DATA_DIR, sym + ".csv")
         if continued and os.path.exists(out_name):
-            print "Fetched", sym
+            print ("Fetched"+ sym)
             continue
 
         succeeded = fetch_prices(sym, out_name)
         num_failure += int(not succeeded)
 
         if idx % 10 == 0:
-            print "# Failures so far [%d/%d]: %d" % (idx + 1, len(symbols), num_failure)
+            print ("# Failures so far [%d/%d]: %d" + (idx + 1, len(symbols), num_failure))
 
 
 if __name__ == "__main__":
