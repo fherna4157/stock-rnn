@@ -8,12 +8,9 @@ import pandas as pd
 import random
 import time
 
-try:
-    import urllib.request as urllib2
-except ImportError:
-    import urllib2
 
-import urllib2
+
+import urllib as urllib2
 
 from BeautifulSoup import BeautifulSoup
 from datetime import datetime
