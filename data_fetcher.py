@@ -8,7 +8,6 @@ import pandas as pd
 import random
 import time
 
-!{sys.executable} -m pip install urllib2
 import urllib2
 
 from BeautifulSoup import BeautifulSoup
