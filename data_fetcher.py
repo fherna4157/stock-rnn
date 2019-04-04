@@ -9,10 +9,11 @@ import random
 import time
 import pip
 
-pip.main(['install', urllib2])
+import sys
+pip install urllib2
 
 
-install("urllib2")
+
 import urllib2
 
 from BeautifulSoup import BeautifulSoup
