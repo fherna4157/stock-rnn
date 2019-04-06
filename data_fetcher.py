@@ -13,7 +13,7 @@ import sys
 import subprocess
 
 subprocess.call([sys.executable, "-m", "pip", "install", "urllib3"])
-
+subprocess.call([sys.executable, "-m", "pip", "install", "BeautifulSoup"])
 
 
 import urllib3 as urllib2
