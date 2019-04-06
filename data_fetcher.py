@@ -22,7 +22,7 @@ subprocess.call([sys.executable, "-m", "pip ", "install", "BeautifulSoup4"])
 
 import urllib3 as urllib2
 
-from BeautifulSoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup4
 from datetime import datetime
 
 DATA_DIR = "data"
