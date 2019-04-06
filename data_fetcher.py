@@ -17,7 +17,7 @@ subprocess.call([sys.executable, "-m", "pip", "install", "urllib3"])
 
 subprocess.call([sys.executable, "-m", "pip", "install", "setuptools"])
 
-subprocess.call([sys.executable, "-m", "anaconda ", "install", "BeautifulSoup"])
+subprocess.call([sys.executable, "-m", "conda ", "install", "BeautifulSoup"])
 
 
 import urllib3 as urllib2
