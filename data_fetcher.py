@@ -13,12 +13,9 @@ import sys
 import subprocess
 
 
-try:
-    import urllib.request as urllib2
-except ImportError:
-    import urllib2
 
-##subprocess.call([sys.executable, "-m", "pip", "install", "urllib2"])
+
+subprocess.call([sys.executable, "-m", "pip", "install", "urllib3"])
 
 
 subprocess.call([sys.executable, "-m", "pip", "install", "setuptools"])
@@ -26,7 +23,7 @@ subprocess.call([sys.executable, "-m", "pip", "install", "setuptools"])
 subprocess.call([sys.executable, "-m", "pip ", "install", "BeautifulSoup4"])
 
 
-import urllib2
+import urllib3 as urllib2
 
 ##from BeautifulSoup import BeautifulSoup4
 from datetime import datetime
