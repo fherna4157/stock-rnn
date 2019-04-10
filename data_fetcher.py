@@ -43,7 +43,7 @@ def _download_sp500_list():
     if os.path.exists(SP500_LIST_PATH):
         return
 
-    f = urllib2.urlopen(SP500_LIST_URL)
+    f = urlopen(SP500_LIST_URL)
     print ("Downloading ..."+ SP500_LIST_URL)
     with open(SP500_LIST_PATH, 'w') as fin:
         print (fin, f.read())
