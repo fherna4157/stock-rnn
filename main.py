@@ -49,7 +49,7 @@ def load_sp500(input_size, num_steps, k=None, target_symbol=None, test_ratio=0.0
         ]
 
     # Load metadata of s & p 500 stocks
-    info = pd.read_csv("stock-rnn/data/constituents-financials.csv")
+    info = pd.read_csv("data/constituents-financials.csv")
     info = info.rename(columns={col: col.lower().replace(' ', '_') for col in info.columns})
     info['file_exists'] = info['symbol'].map(lambda x: os.path.exists("data/{}.csv".format(x)))
     print (info['file_exists'].value_counts().to_dict())
