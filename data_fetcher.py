@@ -12,10 +12,9 @@ import pip
 import sys
 import subprocess
 
+from urllib.request import urlopen
 
-import urllib.request as urllib2
 
-##subprocess.call([sys.executable, "-m", "pip", "install", "urllib2"])
 
 
 subprocess.call([sys.executable, "-m", "pip", "install", "setuptools"])
@@ -23,7 +22,7 @@ subprocess.call([sys.executable, "-m", "pip", "install", "setuptools"])
 subprocess.call([sys.executable, "-m", "pip", "install", "BeautifulSoup4"])
 
 
-import urllib2 
+
 
 ##from BeautifulSoup import BeautifulSoup4
 from datetime import datetime
@@ -81,10 +80,10 @@ def fetch_prices(symbol, out_name):
     print (symbol_url)
 
     try:
-        f = urllib2.urlopen(symbol_url)
+        f = urlopen(symbol_url)
         with open(out_name, 'w') as fin:
             print >> fin, f.read()
-    except urllib2.HTTPError:
+    except :
         print ("Failed when fetching {}".format(symbol))
         return False
 
